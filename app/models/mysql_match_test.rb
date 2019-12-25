@@ -1,0 +1,2 @@
+class MysqlMatchTest < ApplicationRecord
+end
