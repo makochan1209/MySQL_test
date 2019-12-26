@@ -1,4 +1,4 @@
-<% if params[:q] %>
+<% if params[:q] && params[:q].nil? %>
 <% query = "select * from `mysql_match_tests` where match (`desc`) against ('" + params[:q] + "')" %>
 <% @datas = MysqlMatchTest.find_by_sql(query) %>
 <% else %>
