@@ -1,0 +1,9 @@
+<% if params[:q] %>
+<% query = "select * from `mysql_match_tests` where match (`desc`) against ('" + params[:q] + "')" %>
+<% @datas = MysqlMatchTest.find_by_sql(query) %>
+<% else %>
+<% @datas = MysqlMatchTest.all %>
+<% end %>
+<% @datas.each do |data| %>
+<p><%= data.name %>: <%= data.desc %></p>
+<% end %>
