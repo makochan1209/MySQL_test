@@ -4,7 +4,7 @@
 <% else %>
 <% @datas = MysqlMatchTest.all %>
 <% end %>
-<%= form_tag('/page/search',:method => 'get') do %>
+<%= form_tag('',:method => 'get') do %>
   <%= text_field_tag :q %>
   <%= submit_tag 'Search', :name => nil %>
 <% end %>
