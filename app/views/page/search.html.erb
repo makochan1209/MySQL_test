@@ -4,6 +4,10 @@
 <% else %>
 <% @datas = MysqlMatchTest.all %>
 <% end %>
+<%= form_tag('/page/search',:method => 'get') do %>
+  <%= text_field_tag :q %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
 <% @datas.each do |data| %>
 <p><%= data.name %>: <%= data.desc %></p>
 <% end %>
